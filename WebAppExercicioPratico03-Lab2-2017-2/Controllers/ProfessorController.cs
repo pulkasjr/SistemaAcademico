@@ -12,7 +12,7 @@ namespace WebAppExercicioPratico03_Lab2_2017_2.Controllers
 {
     public class ProfessorController : Controller
     {
-        private ProfessorContext db = new ProfessorContext();
+        private SistemaAcademicoContext db = new SistemaAcademicoContext();
 
         // GET: Professor
         public ActionResult Index()

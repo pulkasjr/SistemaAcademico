@@ -12,7 +12,7 @@ namespace WebAppExercicioPratico03_Lab2_2017_2.Controllers
 {
     public class CursoController : Controller
     {
-        private CursoContext db = new CursoContext();
+        private SistemaAcademicoContext db = new SistemaAcademicoContext();
 
         // GET: Curso
         public ActionResult Index()

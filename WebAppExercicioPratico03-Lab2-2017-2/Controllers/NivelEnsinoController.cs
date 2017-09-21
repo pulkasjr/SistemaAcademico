@@ -12,7 +12,7 @@ namespace WebAppExercicioPratico03_Lab2_2017_2.Controllers
 {
     public class NivelEnsinoController : Controller
     {
-        private NivelEnsinoContext db = new NivelEnsinoContext();
+        private SistemaAcademicoContext db = new SistemaAcademicoContext();
 
         // GET: NivelEnsino
         public ActionResult Index()

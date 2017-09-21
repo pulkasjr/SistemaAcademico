@@ -10,112 +10,112 @@ using WebAppExercicioPratico03_Lab2_2017_2.Models;
 
 namespace WebAppExercicioPratico03_Lab2_2017_2.Controllers
 {
-    public class EnderecoController : Controller
+    public class EstudanteController : Controller
     {
         private SistemaAcademicoContext db = new SistemaAcademicoContext();
 
-        // GET: Endereco
+        // GET: Estudante
         public ActionResult Index()
         {
-            var enderecoes = db.Enderecoes.Include(e => e.Estudante);
-            return View(enderecoes.ToList());
+            var estudantes = db.Estudantes.Include(e => e.Endereco);
+            return View(estudantes.ToList());
         }
 
-        // GET: Endereco/Details/5
+        // GET: Estudante/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Endereco endereco = db.Enderecoes.Find(id);
-            if (endereco == null)
+            Estudante estudante = db.Estudantes.Find(id);
+            if (estudante == null)
             {
                 return HttpNotFound();
             }
-            return View(endereco);
+            return View(estudante);
         }
 
-        // GET: Endereco/Create
+        // GET: Estudante/Create
         public ActionResult Create()
         {
-            ViewBag.EnderecoId = new SelectList(db.Estudantes, "EstudanteId", "EstudanteNome");
+            ViewBag.EstudanteId = new SelectList(db.Enderecoes, "EnderecoId", "Enderco1");
             return View();
         }
 
-        // POST: Endereco/Create
+        // POST: Estudante/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EnderecoId,Enderco1,Endereco2,Cidade,CEP,Estado")] Endereco endereco)
+        public ActionResult Create([Bind(Include = "EstudanteId,EstudanteNome,DataNascimento,Foto,Altura,Peso,NivelEnsinoId")] Estudante estudante)
         {
             if (ModelState.IsValid)
             {
-                db.Enderecoes.Add(endereco);
+                db.Estudantes.Add(estudante);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EnderecoId = new SelectList(db.Estudantes, "EstudanteId", "EstudanteNome", endereco.EnderecoId);
-            return View(endereco);
+            ViewBag.EstudanteId = new SelectList(db.Enderecoes, "EnderecoId", "Enderco1", estudante.EstudanteId);
+            return View(estudante);
         }
 
-        // GET: Endereco/Edit/5
+        // GET: Estudante/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Endereco endereco = db.Enderecoes.Find(id);
-            if (endereco == null)
+            Estudante estudante = db.Estudantes.Find(id);
+            if (estudante == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.EnderecoId = new SelectList(db.Estudantes, "EstudanteId", "EstudanteNome", endereco.EnderecoId);
-            return View(endereco);
+            ViewBag.EstudanteId = new SelectList(db.Enderecoes, "EnderecoId", "Enderco1", estudante.EstudanteId);
+            return View(estudante);
         }
 
-        // POST: Endereco/Edit/5
+        // POST: Estudante/Edit/5
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EnderecoId,Enderco1,Endereco2,Cidade,CEP,Estado")] Endereco endereco)
+        public ActionResult Edit([Bind(Include = "EstudanteId,EstudanteNome,DataNascimento,Foto,Altura,Peso,NivelEnsinoId")] Estudante estudante)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(endereco).State = EntityState.Modified;
+                db.Entry(estudante).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EnderecoId = new SelectList(db.Estudantes, "EstudanteId", "EstudanteNome", endereco.EnderecoId);
-            return View(endereco);
+            ViewBag.EstudanteId = new SelectList(db.Enderecoes, "EnderecoId", "Enderco1", estudante.EstudanteId);
+            return View(estudante);
         }
 
-        // GET: Endereco/Delete/5
+        // GET: Estudante/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Endereco endereco = db.Enderecoes.Find(id);
-            if (endereco == null)
+            Estudante estudante = db.Estudantes.Find(id);
+            if (estudante == null)
             {
                 return HttpNotFound();
             }
-            return View(endereco);
+            return View(estudante);
         }
 
-        // POST: Endereco/Delete/5
+        // POST: Estudante/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Endereco endereco = db.Enderecoes.Find(id);
-            db.Enderecoes.Remove(endereco);
+            Estudante estudante = db.Estudantes.Find(id);
+            db.Estudantes.Remove(estudante);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

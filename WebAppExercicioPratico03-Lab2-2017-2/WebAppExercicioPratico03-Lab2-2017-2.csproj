@@ -191,6 +191,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
+    <Compile Include="Controllers\EstudanteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NivelEnsinoController.cs" />
@@ -200,16 +201,13 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Curso.cs" />
-    <Compile Include="Models\CursoContext.cs" />
     <Compile Include="Models\Endereco.cs" />
-    <Compile Include="Models\EnderecoContext.cs" />
     <Compile Include="Models\Estudante.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NivelEnsino.cs" />
-    <Compile Include="Models\NivelEnsinoContext.cs" />
     <Compile Include="Models\Professor.cs" />
-    <Compile Include="Models\ProfessorContext.cs" />
+    <Compile Include="Models\SistemaAcademicoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -270,11 +268,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Endereco\Create.cshtml" />
-    <Content Include="Views\Endereco\Delete.cshtml" />
-    <Content Include="Views\Endereco\Details.cshtml" />
-    <Content Include="Views\Endereco\Edit.cshtml" />
-    <Content Include="Views\Endereco\Index.cshtml" />
+    <Content Include="Views\Estudante\Create.cshtml" />
+    <Content Include="Views\Estudante\Delete.cshtml" />
+    <Content Include="Views\Estudante\Details.cshtml" />
+    <Content Include="Views\Estudante\Edit.cshtml" />
+    <Content Include="Views\Estudante\Index.cshtml" />
+    <Content Include="Views\NivelEnsino\Create.cshtml" />
+    <Content Include="Views\NivelEnsino\Delete.cshtml" />
+    <Content Include="Views\NivelEnsino\Details.cshtml" />
+    <Content Include="Views\NivelEnsino\Edit.cshtml" />
+    <Content Include="Views\NivelEnsino\Index.cshtml" />
     <Content Include="Views\Curso\Create.cshtml" />
     <Content Include="Views\Curso\Delete.cshtml" />
     <Content Include="Views\Curso\Details.cshtml" />
@@ -285,11 +288,11 @@
     <Content Include="Views\Professor\Details.cshtml" />
     <Content Include="Views\Professor\Edit.cshtml" />
     <Content Include="Views\Professor\Index.cshtml" />
-    <Content Include="Views\NivelEnsino\Create.cshtml" />
-    <Content Include="Views\NivelEnsino\Delete.cshtml" />
-    <Content Include="Views\NivelEnsino\Details.cshtml" />
-    <Content Include="Views\NivelEnsino\Edit.cshtml" />
-    <Content Include="Views\NivelEnsino\Index.cshtml" />
+    <Content Include="Views\Endereco\Create.cshtml" />
+    <Content Include="Views\Endereco\Delete.cshtml" />
+    <Content Include="Views\Endereco\Details.cshtml" />
+    <Content Include="Views\Endereco\Edit.cshtml" />
+    <Content Include="Views\Endereco\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
